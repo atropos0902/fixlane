@@ -1,0 +1,30 @@
+{
+  "name": "fixlane",
+  "private": true,
+  "license": "Apache-2.0",
+  "type": "module",
+  "engines": {
+    "node": ">=24.15"
+  },
+  "packageManager": "pnpm@10.33.3",
+  "devDependencies": {
+    "@biomejs/biome": "2.4.14",
+    "@stryker-mutator/core": "9.6.1",
+    "@stryker-mutator/vitest-runner": "9.6.1",
+    "@types/node": "^24.12.2",
+    "fast-check": "4.7.0",
+    "typescript": "6.0.3",
+    "vitest": "4.1.5"
+  },
+  "scripts": {
+    "local": "node bench/local.ts",
+    "daemon": "node packages/daemon/src/main.ts",
+    "sync": "node packages/sync/src/main.ts",
+    "images": "docker build -q --target check -t fixlane-check:dev packages/sandbox/image && docker build -q --target agent -t fixlane-agent:dev packages/sandbox/image",
+    "lint": "biome check",
+    "typecheck": "tsc -p . && tsc -p apps/desktop",
+    "test": "vitest run",
+    "test:mutation": "stryker run",
+    "desktop": "pnpm --filter @fixlane/desktop build && pnpm --filter @fixlane/desktop start"
+  }
+}

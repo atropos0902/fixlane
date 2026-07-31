@@ -1,0 +1,10 @@
+{
+  "testRunner": "vitest",
+  "plugins": ["@stryker-mutator/vitest-runner"],
+  "vitest": { "configFile": "vitest.core.config.ts" },
+  "mutate": ["packages/core/src/*.ts", "!packages/core/src/index.ts", "!packages/core/src/schema.ts"],
+  "ignorePatterns": ["bench/results", "apps", "docs"],
+  "reporters": ["clear-text", "json"],
+  "jsonReporter": { "fileName": "reports/mutation.json" },
+  "thresholds": { "high": 90, "low": 80, "break": 80 }
+}

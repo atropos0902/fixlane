@@ -1,0 +1,17 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.4.14/schema.json",
+  "files": { "includes": ["**", "!**/dist", "!**/release", "!**/*.json", "!**/reports", "!**/.stryker-tmp"] },
+  "formatter": { "indentStyle": "space", "lineWidth": 110 },
+  "javascript": {
+    "formatter": { "quoteStyle": "single", "semicolons": "asNeeded", "trailingCommas": "all" }
+  },
+  "linter": {
+    "rules": {
+      "recommended": true,
+      "style": { "noNonNullAssertion": "off", "noDescendingSpecificity": "off" },
+      "correctness": { "noVoidTypeReturn": "off" },
+      "suspicious": { "noTemplateCurlyInString": "off" },
+      "a11y": { "noNoninteractiveTabindex": "off" }
+    }
+  }
+}
