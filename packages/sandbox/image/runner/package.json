@@ -1,0 +1,11 @@
+{
+  "name": "fixlane-runner",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "0.2.128",
+    "@modelcontextprotocol/sdk": "1.29.0",
+    "@openai/codex-sdk": "0.128.0",
+    "zod": "4.4.3"
+  }
+}

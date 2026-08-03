@@ -1,0 +1,16 @@
+{
+  "name": "@fixlane/sandbox",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./*": "./src/*.ts"
+  },
+  "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "0.2.128",
+    "@fixlane/core": "workspace:*",
+    "@modelcontextprotocol/sdk": "1.29.0",
+    "@openai/codex-sdk": "0.128.0",
+    "zod": "4.4.3"
+  }
+}
