@@ -1,0 +1,19 @@
+{
+  "name": "@fixlane/hosts",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./*": "./src/*.ts"
+  },
+  "dependencies": {
+    "@fixlane/core": "workspace:*",
+    "@gitbeaker/requester-utils": "43.8.0",
+    "@gitbeaker/rest": "43.8.0",
+    "@octokit/rest": "22.0.1",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@fixlane/fakes": "workspace:*"
+  }
+}
