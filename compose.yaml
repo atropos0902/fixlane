@@ -1,0 +1,13 @@
+services:
+  postgres:
+    image: postgres:18.3
+    environment:
+      POSTGRES_USER: fixlane
+      POSTGRES_PASSWORD: fixlane
+      POSTGRES_DB: fixlane
+    ports: ["127.0.0.1:${FIXLANE_PG_PORT:-55432}:5432"]
+    tmpfs: /var/lib/postgresql
+    healthcheck:
+      test: pg_isready -U fixlane
+      interval: 1s
+      retries: 30

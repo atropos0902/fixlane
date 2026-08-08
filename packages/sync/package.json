@@ -1,0 +1,23 @@
+{
+  "name": "@fixlane/sync",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./*": "./src/*.ts"
+  },
+  "dependencies": {
+    "@fixlane/core": "workspace:*",
+    "@fixlane/hosts": "workspace:*",
+    "@hono/node-server": "2.0.1",
+    "hono": "4.12.16",
+    "pg": "8.20.0",
+    "ws": "8.20.0",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@fixlane/fakes": "workspace:*",
+    "@types/pg": "8.20.0",
+    "@types/ws": "8.18.1"
+  }
+}
