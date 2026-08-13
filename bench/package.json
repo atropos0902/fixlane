@@ -1,0 +1,16 @@
+{
+  "name": "@fixlane/bench",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@fixlane/core": "workspace:*",
+    "@fixlane/daemon": "workspace:*",
+    "@fixlane/fakes": "workspace:*",
+    "@fixlane/gitstore": "workspace:*",
+    "@fixlane/hosts": "workspace:*",
+    "@fixlane/sandbox": "workspace:*",
+    "@fixlane/sync": "workspace:*",
+    "pg": "8.20.0",
+    "ws": "8.20.0"
+  }
+}
