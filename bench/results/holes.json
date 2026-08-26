@@ -1,0 +1,12 @@
+[
+  {
+    "name": "no fix, and a test that reads the source file",
+    "through": true,
+    "probe": "open"
+  },
+  {
+    "name": "a fix for the one input the test uses",
+    "through": true,
+    "probe": "open"
+  }
+]

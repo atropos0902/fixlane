@@ -1,0 +1,22 @@
+{
+  "repository": {
+    "files": 4000,
+    "commits": 301,
+    "mirrorKb": 6964
+  },
+  "shared clone": {
+    "medianMs": 499,
+    "filesKb": 16324,
+    "gitKb": 420
+  },
+  "worktree": {
+    "medianMs": 393,
+    "filesKb": 16328,
+    "gitKb": 354
+  },
+  "full clone": {
+    "medianMs": 772,
+    "filesKb": 16324,
+    "gitKb": 7168
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "schedules": 1000,
+  "pulls": 403,
+  "opened": 892,
+  "stale": 2414,
+  "refused": 617,
+  "pushesByStale": 3732,
+  "takeovers": 6665,
+  "serverDeathsAfterOpening": 55,
+  "wrong": []
+}

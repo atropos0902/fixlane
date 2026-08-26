@@ -1,0 +1,107 @@
+{
+  "planted": 20,
+  "turnedDown": 20,
+  "through": [],
+  "rows": [
+    {
+      "name": "asserts nothing",
+      "state": "stopped",
+      "reason": "gave up after 2 attempts: every test passes on the base commit too"
+    },
+    {
+      "name": "asserts a constant",
+      "state": "stopped",
+      "reason": "gave up after 2 attempts: every test passes on the base commit too"
+    },
+    {
+      "name": "checks what always worked",
+      "state": "stopped",
+      "reason": "gave up after 2 attempts: every test passes on the base commit too"
+    },
+    {
+      "name": "swallows the assertion",
+      "state": "stopped",
+      "reason": "gave up after 2 attempts: every test passes on the base commit too"
+    },
+    {
+      "name": "forgets to await",
+      "state": "stopped",
+      "reason": "gave up after 2 attempts: every test passes on the base commit too"
+    },
+    {
+      "name": "is skipped",
+      "state": "stopped",
+      "reason": "gave up after 2 attempts: every test passes on the base commit too"
+    },
+    {
+      "name": "is a todo",
+      "state": "stopped",
+      "reason": "gave up after 2 attempts: every test passes on the base commit too"
+    },
+    {
+      "name": "tests its own mock",
+      "state": "stopped",
+      "reason": "gave up after 2 attempts: every test passes on the base commit too"
+    },
+    {
+      "name": "leaves the process early",
+      "state": "stopped",
+      "reason": "gave up after 2 attempts: every test passes on the base commit too"
+    },
+    {
+      "name": "fails on base because a new helper is missing",
+      "state": "stopped",
+      "reason": "gave up after 2 attempts: the new test fails on base only because it cannot load or call something, so it proves nothing"
+    },
+    {
+      "name": "fails on base because a new function is missing",
+      "state": "stopped",
+      "reason": "gave up after 2 attempts: the new test fails on base only because it cannot load or call something, so it proves nothing"
+    },
+    {
+      "name": "flips a coin",
+      "state": "stopped",
+      "reason": "gave up after 2 attempts: the new test does not give the same result every time"
+    },
+    {
+      "name": "passes the second time",
+      "state": "stopped",
+      "reason": "gave up after 2 attempts: every test passes on the base commit too"
+    },
+    {
+      "name": "only describes",
+      "state": "stopped",
+      "reason": "gave up after 2 attempts: every test passes on the base commit too"
+    },
+    {
+      "name": "is empty",
+      "state": "stopped",
+      "reason": "gave up after 2 attempts: every test passes on the base commit too"
+    },
+    {
+      "name": "is not picked up by the runner",
+      "state": "stopped",
+      "reason": "gave up after 2 attempts: every test passes on the base commit too"
+    },
+    {
+      "name": "prints a result of its own",
+      "state": "stopped",
+      "reason": "gave up after 2 attempts: every test passes on the base commit too"
+    },
+    {
+      "name": "looks at the clock",
+      "state": "stopped",
+      "reason": "gave up after 2 attempts: the new test does not give the same result every time"
+    },
+    {
+      "name": "replaces the old tests with weaker ones",
+      "state": "stopped",
+      "reason": "gave up after 2 attempts: every test passes on the base commit too"
+    },
+    {
+      "name": "has the same name as a test that already passes",
+      "state": "stopped",
+      "reason": "gave up after 2 attempts: every test passes on the base commit too"
+    }
+  ]
+}
