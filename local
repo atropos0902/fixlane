@@ -1,0 +1,6 @@
+#!/bin/sh
+# Installs what is needed and starts everything. Needs Docker, Node 24.15 or newer, and pnpm.
+set -e
+cd "$(dirname "$0")"
+pnpm install --frozen-lockfile --silent
+exec node bench/local.ts

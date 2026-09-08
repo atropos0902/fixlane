@@ -1,0 +1,62 @@
+name: ci
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: '0 3 * * *'
+env:
+  FIXLANE_PG_PORT: 55432
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v5
+        with: { node-version: 24.15.0, cache: pnpm }
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+      - run: pnpm typecheck
+      - run: pnpm images
+      - run: docker compose up -d --wait
+      - run: pnpm test
+      - run: node bench/crash.ts 40 2
+      - run: node bench/leases.ts 200
+      - run: node bench/tickets.ts replay
+      - run: node bench/planted.ts
+      - run: node bench/attacks.ts
+  desktop:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v5
+        with: { node-version: 24.15.0, cache: pnpm }
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm images
+      - run: pnpm --filter @fixlane/desktop build
+      # The runner's kernel keeps Chromium's sandbox from starting unless this is allowed.
+      - run: sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
+      - run: xvfb-run -a pnpm --filter @fixlane/desktop e2e
+  mutation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v5
+        with: { node-version: 24.15.0, cache: pnpm }
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm test:mutation
+  live:
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v5
+        with: { node-version: 24.15.0, cache: pnpm }
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm vitest run packages/hosts/test/live.test.ts
+        env:
+          FIXLANE_LIVE_GITHUB: ${{ secrets.FIXLANE_LIVE_GITHUB }}
+          FIXLANE_LIVE_GITLAB: ${{ secrets.FIXLANE_LIVE_GITLAB }}
